@@ -1,0 +1,56 @@
+<ProductPackage Name="Integartion-produit-cdis2" xmlns="clr-namespace:Cdiscount.Service.ProductIntegration.Pivot;assembly=Cdiscount.Service.ProductIntegration" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<ProductPackage.Products>
+		<ProductCollection Capacity="3">
+			<!-- Minimum required attribute variant product
+		<Product SellerProductId="Ref-seller-variant-M" BrandName="Brand" ProductKind="Variant" CategoryCode="CategoryCode" ShortLabel="Max 30 characters and in coherence with the category" LongLabel="Max 132 characters in coherence with the category" Description="Max 420 characters" SellerProductFamily="Ref-seller-variant" Size="Use size authorized like M,L,XL - 40,42,44 you can see size in the GetModelList method" SellerProductColorName="Color" Model="SOUMISSION CREATION PRODUITS_MK"> -->
+
+			<!-- Minimum required attribute standard product 
+		<Product SellerProductId="Ref-seller-Standard" BrandName="Brand" ProductKind="Standard" CategoryCode="CategoryCode" ShortLabel="Max 30 characters and in coherence with the category" LongLabel="Max 132 characters in coherence with the category" Description="Max 420 characters" Model="SOUMISSION CREATION PRODUITS_MK"> -->
+        
+            
+			<Product BrandName="Parragon Plus" CategoryCode="190S0101"             Description="190S0101" LongLabel="Oscar Wilde" Model="SOUMISSION CREATION PRODUIT_MK"             Navigation="EPICERIE" ProductKind="Standard" SellerProductId="9780000001504"             ShortLabel="Oscar Wilde">
+				<Product.EanList>
+					<ProductEan Ean="9780000001504"/>
+				</Product.EanList>
+				<Product.ModelProperties>
+				</Product.ModelProperties>
+				<Product.Pictures>
+                                    <ProductImage Uri="https://images-na.ssl-images-amazon.com/images/I/61%2B91%2B64ogL.jpg" />
+<ProductImage Uri="https://images-na.ssl-images-amazon.com/images/I/61YwjKYo-NL.jpg" />
+<ProductImage Uri="https://images-na.ssl-images-amazon.com/images/I/61IHjFPglaL.jpg" />
+<ProductImage Uri="https://images-na.ssl-images-amazon.com/images/I/71ZEa64oH0L.jpg" />
+<ProductImage Uri="https://images-na.ssl-images-amazon.com/images/I/71Y4ba4Oj9L.jpg" />
+<ProductImage Uri="https://images-na.ssl-images-amazon.com/images/I/71Cc0i40UiL.jpg" />
+				</Product.Pictures>
+			</Product>
+        
+        
+            
+			<Product BrandName="Highnote (ZYX)" CategoryCode="190S0101"             Description="190S0101" LongLabel="Encyclopédie multimédia de l'homéopathie" Model="SOUMISSION CREATION PRODUIT_MK"             Navigation="EPICERIE" ProductKind="Standard" SellerProductId="9780000007308"             ShortLabel="Encyclopédie multimédia de l'homéopathie">
+				<Product.EanList>
+					<ProductEan Ean="9780000007308"/>
+				</Product.EanList>
+				<Product.ModelProperties>
+				</Product.ModelProperties>
+				<Product.Pictures>
+                                    <ProductImage Uri="https://images-na.ssl-images-amazon.com/images/I/211ygJ0yzIL.jpg" />
+				</Product.Pictures>
+			</Product>
+        
+        
+            
+			<Product BrandName="Macmillan Education Australia" CategoryCode="190S0101"             Description="190S0101" LongLabel="K bo, simulateur de chien" Model="SOUMISSION CREATION PRODUIT_MK"             Navigation="EPICERIE" ProductKind="Standard" SellerProductId="9780000050014"             ShortLabel="K bo, simulateur de chien">
+				<Product.EanList>
+					<ProductEan Ean="9780000050014"/>
+				</Product.EanList>
+				<Product.ModelProperties>
+				</Product.ModelProperties>
+				<Product.Pictures>
+                                    <ProductImage Uri="https://images-na.ssl-images-amazon.com/images/I/418DANds84L.jpg" />
+				</Product.Pictures>
+			</Product>
+        
+        
+		</ProductCollection>
+	</ProductPackage.Products>
+</ProductPackage>

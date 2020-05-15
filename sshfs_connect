@@ -1,0 +1,1 @@
+sshfs database@185.53.129.238:/home/amazon/public_html/amazon2cdiscount remote_dir -p 3022

@@ -1,0 +1,14 @@
+<ProductPackage Name="{{ pkg_name }}" xmlns="clr-namespace:Cdiscount.Service.ProductIntegration.Pivot;assembly=Cdiscount.Service.ProductIntegration" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<ProductPackage.Products>
+		<ProductCollection Capacity="3">
+			<!-- Minimum required attribute variant product
+		<Product SellerProductId="Ref-seller-variant-M" BrandName="Brand" ProductKind="Variant" CategoryCode="CategoryCode" ShortLabel="Max 30 characters and in coherence with the category" LongLabel="Max 132 characters in coherence with the category" Description="Max 420 characters" SellerProductFamily="Ref-seller-variant" Size="Use size authorized like M,L,XL - 40,42,44 you can see size in the GetModelList method" SellerProductColorName="Color" Model="SOUMISSION CREATION PRODUITS_MK"> -->
+
+			<!-- Minimum required attribute standard product 
+		<Product SellerProductId="Ref-seller-Standard" BrandName="Brand" ProductKind="Standard" CategoryCode="CategoryCode" ShortLabel="Max 30 characters and in coherence with the category" LongLabel="Max 132 characters in coherence with the category" Description="Max 420 characters" Model="SOUMISSION CREATION PRODUITS_MK"> -->
+        {% for product_pkg in product_pkgs %}
+            {{ product_pkg.render() }}
+        {% endfor %}
+		</ProductCollection>
+	</ProductPackage.Products>
+</ProductPackage>

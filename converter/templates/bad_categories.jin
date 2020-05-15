@@ -1,0 +1,10 @@
+{% extends "base.html" %} 
+
+
+{% block main %}
+    <ol>
+        {% for cat in cats %}
+            <p>{{ cat }}</p>
+        {% endfor %}
+    </ol>
+{% endblock %}
