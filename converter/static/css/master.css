@@ -1,3 +1,27 @@
 .main-container{
     margin-top:50px;
 }
+
+.vscroll{
+    max-height: 32em;
+    overflow: auto;
+    overflow-y: auto;
+}
+
+.requestbox{
+    border-bottom: 2px solid black;
+    padding: 10px 30px;
+    margin-top: 10px;
+    overflow-y:auto;
+}
+
+.codebox{
+    border-style: solid;
+    border-width: 1px;
+    margin: 0.75em 1em;
+    padding: 0;
+    border-color: #bcd;
+    background: #ebf1f5;
+    color: #222;
+}
+

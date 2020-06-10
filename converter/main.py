@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
-import json 
+import json
 import time
 import re
 import datetime
@@ -83,6 +83,8 @@ def create_pkg(csv_file):
         # Get categories
         category_name = get_product_category(product)
         category = models.Category.by_name(category_name)
+        product_attributes = api.get_model_attributes(category.code)
+        product.convert_attributes(product_attributes)
         if not category:
             mapped = bad_category_handler.BadCategoryHandler(category_name)
             logging_mgr.warning_msg('Category {} is invalid'.format(category_name))

@@ -13,6 +13,7 @@ from logging_manager import logging_mgr, LoggingManager
 API_ENV = "wsvc.cdiscount.com"
 
 
+
 class RequestTemplate:
     template ="""
         <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
@@ -178,6 +179,29 @@ def get_categories():
     models.CategoryTree.parse_categories(cat_tree)
     models.Category.remove_duplicates()
     return [obj.to_json() for obj in models.Category.objects]
+
+def get_model_attributes(cat_code):
+    get_model_list = SoapAction.actions['GetModelList']
+
+    body = """
+    <modelFilter xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+        <CategoryCodeList xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+            <a:string>{}</a:string>
+        </CategoryCodeList>
+    </modelFilter>
+    """.format(cat_code)
+
+    # Body built from https://dev.cdiscount.com/marketplace/?page_id=230 example
+
+    ### UNCOMMENT TEST
+    r = get_model_list(credentials.token, body=body,
+                 save_to="../sample_data/cdiscount_outs/getmodellist_out.txt")
+    ### DELETE BELOW
+    #r  = SoapResponse(Fake('../sample_data/cdiscount_outs/getmodellist_out.txt'))
+    ###
+    import pdb; pdb.set_trace()
+
+    return #TODO
 
 def model_by_category(cat_code):
     get_model_list = SoapAction.actions['GetModelList']

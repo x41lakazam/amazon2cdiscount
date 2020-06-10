@@ -44,6 +44,12 @@ class AmazonProduct:
         "imagesCSV"
     ]
 
+    cdiscount_attrs = {
+        #Cdiscount:Amazoninput
+        "Couleur principale": "color",
+        "Genre":"genre",
+    }
+
     def __init__(self,
                 ean,
                 asin,
@@ -96,6 +102,12 @@ class AmazonProduct:
                 self.nom = nom
                 self.ref = ref
                 self.imagesCSV = imagesCSV
+
+    def convert_attributes(self, product_attributes):
+        for attr in product_attributes:
+            if attr not in type(self).cdiscount_attrs:
+                continue
+            cdiscount_attr = cdiscount_attrs[attr]
 
 class AmazonProduct(dict):
 

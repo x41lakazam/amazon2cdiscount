@@ -1,0 +1,16 @@
+{% extends "base.jin" %}
+
+{% block main %}
+
+    {% for request in requests %}
+
+        <div class="requestbox">
+            <p><strong><xmp>{{ request.head }}</xmp></strong></p>
+            <div class="codebox">
+                <pre class="vscroll">
+                    <p><xmp>{{ request.body }}</xmp></p>
+                </pre>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

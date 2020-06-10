@@ -7,15 +7,19 @@ requests_logging = LoggingManager(to_file="logs/requests.log")
 
 def textify_response(resp, info_line=""):
     return """
->>>>> {} <<<<<
+<-<
+{}
 {}
 
 Headers:
-------
 {}
-------
+>->
 
-{}""".format(
+<-<
+{}
+>->
+-=-=-=-=
+""".format(
                     info_line,
                     resp.status_code,
                     '\n'.join(['{}:{}'.format(h,v) for h,v in resp.headers.items()]),
@@ -24,15 +28,19 @@ Headers:
 
 def textify_request(req, info_line=""):
     return """
->>>>> {} <<<<<
+<-<
+{}
 {} {}
 
 Headers:
-------
 {}
-------
 
-{}""".format(
+>->
+<-<
+{}
+>->
+-=-=-=-=
+""".format(
                     info_line,
                     req.method,
                     req.url,

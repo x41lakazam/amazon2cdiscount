@@ -7,6 +7,7 @@
 # Copyright 2020. Eyal Shukrun. All rights reserved.
 
 import flask
+import xml.dom.minidom
 import flask_wtf as wtf
 import wtforms
 from werkzeug import secure_filename
@@ -44,6 +45,42 @@ def upload_csv():
 
     return flask.redirect(flask.url_for('index'))
 
+@app.route('/requests-log')
+def requests_log():
+    logs_fn = "logs/requests.log"
+
+    file_content = open(logs_fn, 'r').readlines()
+
+    requests = []
+
+    open_flag = 0
+    head = body = ""
+    for line in file_content:
+
+
+        if line.startswith('<-<'):
+            open_flag += 1
+        elif line.startswith('>->'):
+            open_flag += 1
+        else:
+
+            if open_flag == 1:
+                head += line
+            elif open_flag == 3:
+                body += line[:1000] + "\n"
+
+
+        if line.strip() == '-=-=-=-=':
+            # Prettify body
+
+            requests.append({'head':head, 'body':body})
+            open_flag = 0
+            head = body = ""
+
+
+    return flask.render_template("request_log.jin", requests=requests)
+
+
 @app.route('/bad-categories')
 def fix_bad_categories():
     cats = bad_cat.BadCategoryHandler.unresolved_categories()
@@ -52,5 +89,4 @@ def fix_bad_categories():
 
 if __name__ == "__main__":
     app.run(port=5000)
-
 

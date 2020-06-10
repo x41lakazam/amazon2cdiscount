@@ -18,6 +18,7 @@ import img_converter
 import bad_category_handler as bad_cat
 
 
+
 class Brand:
     objects = []
 
@@ -626,18 +627,18 @@ class ProductXML:
 
         # Generate product.ModelProperty
         model_properties_raw = [
-            ("brand", self.amazon_product["brand"]),
-            ("genre", self.amazon_product["genre"]),
-            ("model", self.amazon_product["model"]),
-            ("color", self.amazon_product["color"]),
-            ("size", self.amazon_product["size"]),
-            ("edition", self.amazon_product["edition"]),
-            ("format", self.amazon_product["format"]),
-            ("Height", self.amazon_product["packageHeight"] + ' cm'),
-            ("Length", self.amazon_product["packageLength"] + ' cm'),
-            ("Width", self.amazon_product["packageWidth"] + ' cm'),
-            ("Weight", self.amazon_product["packageWeight"] + ' kg'),
+            #("brand", self.amazon_product["brand"]),
+            #("model", self.amazon_product["model"]),
+            #("size", self.amazon_product["size"]),
+            #("edition", self.amazon_product["edition"]),
+            #("format", self.amazon_product["format"]),
+            #("Height", self.amazon_product["packageHeight"] + ' cm'),
+            #("Length", self.amazon_product["packageLength"] + ' cm'),
+            #("Width", self.amazon_product["packageWidth"] + ' cm'),
+            #("Weight", self.amazon_product["packageWeight"] + ' kg'),
             # Short label, shortproductid, sellerproductfamily
+            ("Couleur principale", self.amazon_product["color"]),
+            ("Genre", self.amazon_product["genre"]),
         ]
 
         ModelProperties = '\n'.join([create_model_property(tup) for tup in model_properties_raw if
@@ -674,12 +675,12 @@ class ProductXML:
 					<ProductEan Ean="{SellerProductId}"/>
 				</Product.EanList>
             """
-#        if len(ModelProperties):
-#            xml += f"""
-#                <Product.ModelProperties>
-#                    {ModelProperties}
-#                </Product.ModelProperties>
-#                """
+        if len(ModelProperties):
+            xml += f"""
+                <Product.ModelProperties>
+                    {ModelProperties}
+                </Product.ModelProperties>
+                """
 
         xml += f"""
 				<Product.Pictures>

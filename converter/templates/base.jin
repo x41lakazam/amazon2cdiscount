@@ -49,7 +49,13 @@
                   Missing categories<span class="sr-only">(current)</span>
                 </a>
               </li>
-              <!-- SAMPLE 
+              <li class="nav-item">
+                  <a class="nav-link active" href="{{ url_for('requests_log') }}">
+                  <span data-feather="home"></span>
+                  Requests Log<span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <!-- SAMPLE
               <li class="nav-item">
                 <a class="nav-link" href="#">
                   <span data-feather="layers"></span>
@@ -84,7 +90,7 @@
             <ol>
             {% for msg in msgs %}
                 <div class="alert alert-success">
-                    <strong>{{ msg }}</strong> 
+                    <strong>{{ msg }}</strong>
                 </div>
             {% endfor %}
             </ol>
