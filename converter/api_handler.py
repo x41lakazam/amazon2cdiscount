@@ -201,6 +201,7 @@ def get_model_attributes(cat_code):
     ###
     import pdb; pdb.set_trace()
 
+    models_list = r.body['GetModelListResponse']['GetModelListResult']['ModelList']['Definition']["TODO"]
     return #TODO
 
 def model_by_category(cat_code):

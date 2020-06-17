@@ -650,7 +650,7 @@ class ProductXML:
         BrandName=brandName
         ProductKind="Standard"
         CategoryCode=self.category.code
-        ShortLabel=self.category
+        ShortLabel=self.category.name
         LongLabel=self.amazon_product['title']
         Description=description
         if not Description:
