@@ -1,3 +1,4 @@
+-*- coding:utf-8 -*-
 #!/usr/local/bin/python3
 #
 # bad_category_handler.py

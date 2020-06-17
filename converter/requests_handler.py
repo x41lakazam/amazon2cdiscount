@@ -1,3 +1,4 @@
+-*- coding:utf-8 -*-
 import setup
 import datetime
 import requests

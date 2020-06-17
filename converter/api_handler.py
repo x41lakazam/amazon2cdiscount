@@ -1,3 +1,4 @@
+-*- coding:utf-8 -*-
 import requests
 import credentials
 import xml.etree.ElementTree as ET
@@ -199,10 +200,11 @@ def get_model_attributes(cat_code):
     ### DELETE BELOW
     #r  = SoapResponse(Fake('../sample_data/cdiscount_outs/getmodellist_out.txt'))
     ###
-    import pdb; pdb.set_trace()
 
-    models_list = r.body['GetModelListResponse']['GetModelListResult']['ModelList']['Definition']["TODO"]
-    return #TODO
+    models_list = r.body['GetModelListResponse']['GetModelListResult']['ModelList']['ProductModel']['ProductXmlStructure'].encode('ascii', 'replace').decode('utf-8')
+
+    import pdb; pdb.set_trace()
+    return models_list
 
 def model_by_category(cat_code):
     get_model_list = SoapAction.actions['GetModelList']

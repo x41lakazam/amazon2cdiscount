@@ -1,3 +1,4 @@
+-*- coding:utf-8 -*-
 import xml.etree.ElementTree as ET
 import datetime
 from xml import etree

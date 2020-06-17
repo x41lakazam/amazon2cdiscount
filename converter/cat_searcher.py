@@ -1,3 +1,4 @@
+-*- coding:utf-8 -*-
 #!/usr/local/bin/python3
 #
 # cat_searcher.py
