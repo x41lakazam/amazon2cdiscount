@@ -83,6 +83,9 @@ def create_pkg(csv_file):
         # Get categories
         category_name = get_product_category(product)
         category = models.Category.by_name(category_name)
+        if category is None:
+            logging_mgr.err_msg("Category {} doesn't exist".format(category_name))
+            return False
         product_attributes = api.get_model_attributes(category.code)
         product.convert_attributes(product_attributes)
         if not category:
@@ -103,6 +106,8 @@ def create_pkg(csv_file):
 def api_upload(csv_file):
 
     pkg = create_pkg(csv_file)
+    if not pkg:
+        return False
     pkg_id = pkg.submit_package()
     status = pkg.get_submissions_result()
 
@@ -131,6 +136,8 @@ if __name__ == '__main__':
     csv_path = '../sample_data/example.csv'
     generate_example_csv('../sample_data/split-me.csv', csv_path)
     pkg_infos = api_upload(csv_path)
+    if pkg_infos is False:
+        print("Problem")
     import ipdb; ipdb.set_trace()
     print(pkg_infos)
 
