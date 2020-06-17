@@ -1,4 +1,4 @@
--*- coding:utf-8 -*-
+#-*- coding:utf-8 -*-
 import api_models
 from main import debugme, get_product_category, check_file, generate_categories_list
 import os

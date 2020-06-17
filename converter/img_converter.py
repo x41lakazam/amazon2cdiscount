@@ -1,4 +1,4 @@
--*- coding:utf-8 -*-
+#-*- coding:utf-8 -*-
 #!/usr/local/bin/python3
 #
 # img_converter.py

@@ -1,4 +1,4 @@
--*- coding:utf-8 -*-
+#-*- coding:utf-8 -*-
 import requests
 import credentials
 import xml.etree.ElementTree as ET

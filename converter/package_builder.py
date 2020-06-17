@@ -1,4 +1,4 @@
--*- coding:utf-8 -*-
+#-*- coding:utf-8 -*-
 class ZippedPackage:
 
     def __init__(self, products_pkg):
