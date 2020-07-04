@@ -1,6 +1,7 @@
 #-*- coding:utf-8 -*-
 # -*- coding: utf-8 -*-
 import os
+import sys
 import json
 import time
 import re
@@ -100,6 +101,13 @@ def create_pkg(csv_file):
         return False
 
     pkg = models.ProductPackage(products_and_categories)
+    #3333
+    print(pkg.products_xml.render())
+    v = input("Confirm?")
+    if v.lower() == 'n':
+        sys.exit(0)
+    #3333
+
     pkg.create()
 
     return pkg
@@ -107,6 +115,8 @@ def create_pkg(csv_file):
 def api_upload(csv_file):
 
     pkg = create_pkg(csv_file)
+
+
     if not pkg:
         return False
     pkg_id = pkg.submit_package()
