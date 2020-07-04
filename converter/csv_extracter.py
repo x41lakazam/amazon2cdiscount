@@ -115,7 +115,7 @@ class AmazonProduct(dict):
     def validate(self):
         assert 'productGroup' in self.keys(), "This item got no product group"
 
-    def convert_attributes(self):
+    def convert_attributes(self, products_attrs):
         pass
 
 class AmazonCSV:
